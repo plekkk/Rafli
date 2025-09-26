@@ -16,13 +16,14 @@ body {
 
 .container {
     max-width: 960px;
-    color: #f8f8f8;
+    color: #000000;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
 .container {
-  max-width: 90%; /* Lebar maksimal 90% dari layar */
+  max-width: 1100px; /* Lebar maksimal */
+  width: 90%; /* Lebar maksimal 90% dari layar */
   margin: 0 auto;
 }
 
@@ -155,45 +156,34 @@ footer {
     transform: translateY(0);
 }
 
-
-
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 100px; /* Jarak antara foto dan teks */
-    flex-wrap: wrap; /* Untuk tampilan responsif */
-}
-
-.profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Membuat foto jadi lingkaran */
-    object-fit: cover; /* Memastikan foto tidak distorsi */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Aturan ini akan berlaku untuk semua layar */
-.hero-content h1 {
-  font-size: 48px;
-}
-
-/* --- Media Query untuk Layar Kecil (Tablet dan HP) --- */
 @media (max-width: 768px) {
-  /* Di bawah 768px, ukuran font akan lebih kecil */
+
+  /* 1. Mengubah Ukuran Font agar tidak terlalu besar di HP */
   .hero-content h1 {
     font-size: 32px;
   }
-  
-  /* Grid portofolio berubah menjadi satu kolom */
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  /* 2. Mengubah Tata Letak Grid (misalnya, dari 3 kolom jadi 1 kolom) */
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1fr berarti 1 kolom penuh */
+    gap: 15px;
   }
-
-  /* Gambar di bagian about jadi 100% lebar */
-  .about-content .profile-pic {
-    width: 100%;
-    height: auto;
+  
+  /* 3. Mengatur Navigasi (Jika kamu punya menu horizontal) */
+  header nav ul {
+    display: none; /* Sembunyikan menu navigasi horizontal */
   }
-
+  /* (Di sini kamu bisa menggantinya dengan tombol menu hamburger) */
+  
+  /* 4. Mengubah Tata Letak Bagian 'Tentang Saya' */
+  .about-content {
+    flex-direction: column; /* Mengubah tata letak dari samping-samping menjadi tumpuk */
+    text-align: center;
+  }
+  .profile-pic {
+    margin-bottom: 20px;
+  }
 }
