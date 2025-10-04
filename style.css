@@ -121,6 +121,7 @@ project-card {
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(18, 95, 167, 0.5);
 }
 
 .project-card img {
@@ -156,6 +157,81 @@ footer {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* style.css */
+
+/* Wadah luar section */
+.shoutouts-section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+/* Wadah Slider: Ini yang mengatur scroll horizontal */
+.slider-container {
+    display: flex; /* Aktifkan Flexbox */
+    gap: 20px; /* Jarak antar kartu */
+    
+    /* PENTING: Mengizinkan scroll horizontal */
+    overflow-x: auto; 
+    
+    /* Opsional: Menyembunyikan scrollbar di browser tertentu */
+    /* Untuk Firefox */
+    scrollbar-width: none; 
+    /* Untuk WebKit (Chrome/Safari) */
+    -ms-overflow-style: none; /* IE and Edge */
+    
+    padding-bottom: 20px; /* Agar ada ruang untuk jari saat swipe di mobile */
+    
+    /* Pastikan wadah tidak membungkus kartu ke bawah */
+    flex-wrap: nowrap;
+}
+
+/* Menyembunyikan scrollbar di WebKit (Chrome/Safari) */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Styling untuk setiap Kartu */
+.shoutout-card {
+    /* Atur lebar minimum agar kartu tidak menyusut */
+    min-width: 250px; 
+    flex-shrink: 0; /* PENTING: Mencegah kartu menyusut */
+    
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid #08a7e6; 
+    
+    /* Agar konten di dalamnya mudah diatur */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Membuat Foto Bulat dan Mengatur Jarak */
+.slider-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Membuat Bulat Sempurna */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #0492e4; /* Border keren */
+}
+
+.shoutout-card .name {
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.shoutout-card .role {
+    font-size: 0.9em;
+    color: #cacaca;
+    margin-bottom: 15px;
 }
 
 /* style.css */
@@ -241,6 +317,22 @@ footer {
   .profile-pic {
     margin-bottom: 20px;
 
+/* style.css */
+
+/* Menjaga agar iframe responsif dan terlihat rapi di tengah */
+.spotify-embed-wrapper {
+    max-width: 500px; /* Batasi lebar maksimal agar tidak terlalu besar di desktop */
+    margin: 30px auto; /* Pusatkan wadah */
+    border-radius: 12px;
+    overflow: hidden; /* Pastikan sudut iframe sesuai dengan radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan untuk efek keren */
+}
+
+/* Pastikan section baru memiliki padding */
+.music-section {
+    text-align: center; /* Pusatkan judul dan paragraf di section ini */
+    padding: 4rem 5%;
+}
     
   }
 }
